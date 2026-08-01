@@ -1,0 +1,16 @@
+[
+{
+  "modid": "scopecraft",
+  "name": "ScopeCraft",
+  "description": "Affiche une lunette de visée personnalisée lorsque vous visiez à l'arc avec zoom et paramètres ajustables.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Antigravity & Ulysse"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
