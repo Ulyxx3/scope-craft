@@ -19,13 +19,24 @@
 
 ---
 
-## 🎮 Installation & Utilisation
+## 📦 Téléchargement & Compilation du Fichier `.jar`
 
-1. Installez **Minecraft 1.8.9 Forge**.
-2. Compilez le projet avec Gradle (`./gradlew build`) ou téléchargez le fichier `.jar` compilé dans l'onglet *Releases*.
-3. Placez le fichier `.jar` dans votre dossier `.minecraft/mods`.
-4. Lancez le jeu et profitez de la lunette en visant avec un arc !
-5. Appuyez sur **`O`** pour personnaliser le mod à tout moment.
+Le fichier prêt à l'emploi est compilé dans le dossier `build/libs/` :
+
+```text
+build/libs/ScopeCraft-1.0.0.jar
+```
+
+### Installation :
+1. Assurez-vous d'avoir **Minecraft 1.8.9 Forge** installé.
+2. Copiez le fichier `ScopeCraft-1.0.0.jar` dans votre dossier `.minecraft/mods`.
+3. Lancez Minecraft et appuyez sur **`O`** en jeu pour ajuster la configuration !
+
+### Recompilation avec PowerShell :
+Pour re-générer le paquet `.jar` après des modifications :
+```powershell
+powershell -ExecutionPolicy Bypass -File build_jar.ps1
+```
 
 ---
 
@@ -34,14 +45,16 @@
 ```text
 scope-craft/
 ├── assets/
-│   └── scope.png                   # Image originale de la lunette
+│   └── scope.png                      # Image originale de la lunette
+├── build/libs/
+│   └── ScopeCraft-1.0.0.jar           # Fichier .jar exécutable pour Minecraft
 ├── src/main/java/net/scopecraft/
-│   ├── ScopeCraft.java             # Main Mod Class & Keybinding
-│   ├── config/ScopeConfig.java     # Sauvegarde & chargement JSON
-│   ├── event/ScopeRenderHandler.java # Overlay Scope & FOV Zoom
-│   └── gui/ScopeConfigGui.java     # Interface graphique (Touche O)
+│   ├── ScopeCraft.java                # Main Mod Class
+│   ├── config/ScopeConfig.java        # Sauvegarde & chargement JSON
+│   ├── event/ScopeRenderHandler.java    # Overlay Scope & FOV Zoom
+│   └── gui/ScopeConfigGui.java        # Interface graphique (Touche O)
 └── src/main/resources/
-    ├── mcmod.info                  # Metadata du Mod Forge
+    ├── mcmod.info                     # Metadata du Mod Forge
     └── assets/scopecraft/textures/gui/scope.png # Texture scope
 ```
 

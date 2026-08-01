@@ -17,6 +17,7 @@ public class ScopeConfig {
     public float zoomFactor = 3.0f; // Multiplicateur de zoom FOV (ex: 3.0x zoom)
     public float scopeOpacity = 1.0f; // Opacité (0.1 à 1.0)
     public float scopeScale = 1.0f; // Échelle de l'image (0.5 à 2.0)
+    public float minBowCharge = 0.0f; // Seuil de tension de l'arc avant d'activer le scope (0.0 = 0%, 1.0 = 100%)
 
     public static ScopeConfig INSTANCE = new ScopeConfig();
 

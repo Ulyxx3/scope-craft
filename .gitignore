@@ -4,6 +4,11 @@ build/
 out/
 bin/
 
+# Compiled scripts & temp build files
+classpath.txt
+compile.ps1
+compile_config.ps1
+
 # IDE / Editor files
 .idea/
 *.iml

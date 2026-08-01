@@ -1,21 +1,17 @@
-pluginManagement {
+buildscript {
     repositories {
         mavenCentral()
         maven {
-            name = "Loom"
-            url = uri("https://maven.architectury.dev/")
-        }
-        maven {
-            name = "Minecraft Forge"
+            name = "Forge"
             url = uri("https://maven.minecraftforge.net/")
         }
     }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
 }
 
-plugins {
-    id 'gg.essential.loom' version '0.1.88'
-    id 'java'
-}
+apply plugin: 'net.minecraftforge.gradle.forge'
 
 group = 'net.scopecraft'
 version = '1.0.0'
@@ -23,38 +19,15 @@ version = '1.0.0'
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
 
-repositories {
-    mavenCentral()
-    maven {
-        url = uri("https://repo.essential.gg/repository/maven-public/")
-    }
-    maven {
-        url = uri("https://pkgs.dev.azure.com/EssentialGG/Essential/_packaging/Essential/maven/v1")
-    }
-}
-
-dependencies {
-    minecraft 'com.mojang:minecraft:1.8.9'
-    mappings 'de.oceanlabs.mcp:mcp_stable:22-1.8.9'
-    forge 'net.minecraftforge:forge:1.8.9-11.15.1.2318-1.8.9'
-}
-
-loom {
-    launchConfigs {
-        client {
-            arg "--tweakClass", "net.minecraftforge.fml.common.launcher.FMLTweaker"
-        }
-    }
-    runConfigs {
-        client {
-            ideConfigGenerated = true
-        }
-    }
+minecraft {
+    version = "1.8.9-11.15.1.2318-1.8.9"
+    runDir = "run"
+    mappings = "stable_22"
 }
 
 processResources {
     inputs.property "version", project.version
-    inputs.property "mcversion", "1.8.9"
+    inputs.property "mcversion", project.minecraft.version
 
     filesMatching("mcmod.info") {
         expand "version": project.version, "mcversion": "1.8.9"
